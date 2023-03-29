@@ -7,9 +7,9 @@ const Main = () => {
     <React.Fragment>
       <h1>this is main page</h1>
       <MainNavigation />
-      <div>
+      <main>
         <Outlet />
-      </div>
+      </main>
     </React.Fragment>
   );
 };
