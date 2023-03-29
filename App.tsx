@@ -7,6 +7,7 @@ import Events from './components/events';
 import EventDetail from './components/eventDetail';
 import EditEvent from './components/editEvent';
 import NewEvent from './components/newEvent';
+import EventLayout from './components/eventLayout';
 
 export default function App() {
   const router = createBrowserRouter([
@@ -20,19 +21,25 @@ export default function App() {
         },
         {
           path: 'events',
-          element: <Events />,
-        },
-        {
-          path: 'events/:eventId',
-          element: <EventDetail />,
-        },
-        {
-          path: 'events/:eventId/edit',
-          element: <EditEvent />,
-        },
-        {
-          path: 'events/new',
-          element: <NewEvent />,
+          element: <EventLayout />,
+          children: [
+            {
+              index: true,
+              element: <Events />,
+            },
+            {
+              path: ':eventId',
+              element: <EventDetail />,
+            },
+            {
+              path: ':eventId/edit',
+              element: <EditEvent />,
+            },
+            {
+              path: 'new',
+              element: <NewEvent />,
+            },
+          ],
         },
       ],
     },

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import MainNavigation from './mainNavigation';
 import { Outlet } from 'react-router-dom';
+import EventNavigation from './eventNavigation';
 
-const Main = () => {
+const EventLayout = () => {
   return (
     <React.Fragment>
-      <MainNavigation />
+      <EventNavigation />
       <main>
         <Outlet />
       </main>
@@ -13,4 +13,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default EventLayout;

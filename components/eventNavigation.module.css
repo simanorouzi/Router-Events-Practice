@@ -1,0 +1,10 @@
+.event-navigation a {
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(70, 69, 69);
+}
+
+.event-navigation a.active,
+a:hover {
+  background-color: rgb(240, 10, 10);
+}
