@@ -1,0 +1,10 @@
+.navigation a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(70, 69, 69);
+}
+
+.navigation a.active,
+a:hover {
+  border: solid 1px rgb(61, 57, 57);
+}
