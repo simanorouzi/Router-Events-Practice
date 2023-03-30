@@ -5,7 +5,9 @@ import classess from './events.module.css';
 const Events = () => {
   const navigate = useNavigate();
   const events = useLoaderData();
-  console.log(events);
+  const data = Object.entries(events).map(([key, value]) => {
+    return { id: key, title: value.title };
+  });
   const newEventHandler = () => {
     navigate('new');
   };
