@@ -3,17 +3,19 @@ import './style.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './components/main';
 import Home from './components/home';
-import Events from './components/events';
+import Events, { loader as eventLoader } from './components/events';
 import EventDetail from './components/eventDetail';
 import EditEvent from './components/editEvent';
 import NewEvent from './components/newEvent';
 import EventLayout from './components/eventLayout';
+import ErrorPage from './components/error';
 
 export default function App() {
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Main />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -26,6 +28,7 @@ export default function App() {
             {
               index: true,
               element: <Events />,
+              loader: eventLoader,
             },
             {
               path: ':eventId',
